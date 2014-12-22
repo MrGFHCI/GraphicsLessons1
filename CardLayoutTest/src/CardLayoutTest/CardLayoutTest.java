@@ -12,6 +12,7 @@ public class CardLayoutTest extends JFrame
 
     public CardLayoutTest() //This is the CONSTRUCTOR method
     {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ActionListener buttonListener = new ButtonListener(); // defined below
         setLayout(new FlowLayout()); //Use this for now.
         setSize(810, 510); //Set the size of the JFrame
