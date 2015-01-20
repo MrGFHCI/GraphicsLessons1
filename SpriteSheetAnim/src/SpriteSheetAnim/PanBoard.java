@@ -14,7 +14,6 @@ public class PanBoard extends JPanel implements ActionListener {
     Rectangle rB, rE, rP; // rectangles for the 3 sprites.
     private Player p;
     Sprite s;
-    //private Enemy e;
     private Timer timer;
     private Image background;
     static String sName;
@@ -24,13 +23,13 @@ public class PanBoard extends JPanel implements ActionListener {
     BufferedImage biSpriteSheet, biSprite;
 
     public PanBoard() {
-        sFile = "SpriteSheet.jpg";
+        sFile = "SpriteSheet.png";
         nX = 0;
         nY = 0;
         //super();
         p = new Player();
         s = new Sprite();
-        s.loadSprite(sName);
+        s.loadSprite(sFile);
         //e = new Enemy();
         addKeyListener(new Movement());
         setFocusable(true);
@@ -67,7 +66,6 @@ public class PanBoard extends JPanel implements ActionListener {
         public void keyReleased(KeyEvent w) {
             p.keyReleased(w);
         }
-
         @Override
         public void keyPressed(KeyEvent w) {
             p.keyPressed(w);
