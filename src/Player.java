@@ -41,6 +41,13 @@ public class Player {
     public int getY() {
         return y;
     }
+    // these next 2 methods are used to get the direction so that bullet is shot in the right direction.
+    public int getDx() {
+        return dx;
+    }
+    public int getDy() {
+        return dy;
+    }
 
     public Image getImage() {
         img = arnRunning_R[i];
@@ -49,23 +56,23 @@ public class Player {
 
     public void keyPressed(KeyEvent w) {
         int code = w.getKeyCode();
-        if (code == KeyEvent.VK_LEFT) {
+        if (code == KeyEvent.VK_A) {
             i = 0;
             dx = -SPEED;
             dy = 0;
-        } else if (code == KeyEvent.VK_RIGHT) {
+        } else if (code == KeyEvent.VK_D) {
             i = 1;
             dy = 0;
             dx = SPEED;
-        } else if (code == KeyEvent.VK_UP) {
+        } else if (code == KeyEvent.VK_W) {
             i = 2;
             dx = 0;
             dy = -SPEED;
-        } else if (code == KeyEvent.VK_DOWN) {
+        } else if (code == KeyEvent.VK_S) {
             i = 3;
             dx = 0;
             dy = SPEED;
-        } else if (code == KeyEvent.VK_S) {
+        } else if (code == KeyEvent.VK_H) {// for "halt"
             dx = 0;
             dy = 0;
         }

@@ -35,9 +35,14 @@ public class PanBoard extends JPanel implements ActionListener {
     }
 // timer function
     public void actionPerformed(ActionEvent arg0) {
-        p.move();
+        // let's not move the player or enemy.
+        //p.move();
         // e should take the x and y of p.
-        e.move(p.getX(), p.getY());
+        //e.move(p.getX(), p.getY());
+        if(b.canShoot()){
+            b.move();
+            System.out.println("move it");
+        }
         repaint();
     }
 
@@ -47,6 +52,7 @@ public class PanBoard extends JPanel implements ActionListener {
         g2d.drawImage(background, 0, 0, null);
         g2d.drawImage(p.getImage(), p.getX(), p.getY(), null);
         g2d.drawImage(e.getImage(), e.getX(), e.getY(), null);
+        g2d.drawImage(b.getImage(), b.getX(), b.getY(), null);
     }
 
     private class Movement extends KeyAdapter {
@@ -58,7 +64,17 @@ public class PanBoard extends JPanel implements ActionListener {
 
         @Override
         public void keyPressed(KeyEvent w) {
+            int code = w.getKeyCode();
             p.keyPressed(w);
+            if(code == KeyEvent.VK_SPACE){
+                System.out.println("Shoot");
+                if( b.canShoot()){
+                    System.out.println("Shoooooot");
+                    b.shoot(p.getX(), p.getY(), p.getDx(), p.getDy());
+                }
+                
+            }
+            
         }
     }
 }
