@@ -5,10 +5,8 @@ import java.awt.Image;
 import java.awt.Label;
 
 public class Bullet {
-
     private Image img;
     int k, nS;
-    int EHMin, EWMin;
     int nX, nY , nDx, nDy;
     boolean bShoot= true;
     private final int bSpeed = 80;
@@ -20,10 +18,7 @@ public class Bullet {
     //int imgHeight = b2.getIconWidth();
     Image arnShooting[] = new Image[4];
 
-    
-
-    public Bullet() {
-        
+    public Bullet() {       
         arnShooting[1] = b1.getImage();
         arnShooting[2] = b2.getImage();
         img = arnShooting[1];
@@ -31,41 +26,26 @@ public class Bullet {
 
     public void move() {
         // will also be in charge of displaying
-        
         nX+=nDx;
-        nY+=nDy;
-        
-            
-        
+        nY+=nDy;            
     }
     public void shoot(int _nX, int _nY, int _nDx, int _nDy){
         nX = _nX;
         nY = _nY;
         nDx = _nDx;
         nDy = _nDy;
-        //bShoot = false;
-        
+        //bShoot = false;        
     }
-
     public int getX() {
         return nX;
     }
-
     public int getY() {
         return nY;
     }
     public boolean canShoot(){
         return bShoot;
     }
-
     public Image getImage() {
-        //img = arnShooting[1];
-        //if (nCount == 0) {
-       //     k = 0;
-       //     return img;
-       // }
         return img;
     }
-
-    
 }
