@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author dadeeo
+ *
  */
 public class Craft  extends Sprite{
     private int dx;
