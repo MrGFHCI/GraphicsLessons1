@@ -23,32 +23,21 @@ public class Sprite {
     protected int height;
     protected boolean vis;
     protected Image image;
-    //protected BufferedImage biImg;
 
     public Sprite(int x, int y) {
-
         this.x = x;
         this.y = y;
         vis = true;
     }
 
     protected void getImageDimensions() {
-
         width = image.getWidth(null);
         height = image.getHeight(null);
     }
 
     protected void loadImage(String imageName) {
-
         ImageIcon ii = new ImageIcon(imageName);
         image = ii.getImage();
-        
-        /*try{
-        biImg = ImageIO.read(new File(imageName));
-        }catch(IOException ex){
-        }*/
-        
-        
     }
 
     public Image getImage() {

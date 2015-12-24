@@ -2,7 +2,8 @@
 
 
 // This builds on the previous "collide" project.
-// this time, I will do better naming, and use buffered images, since they seem to re-size better.
+// this time, I will do better naming, git: https://github.com/Mrgfhci/GraphicsLessons1.git the Collide2 folder
+
 
 import java.io.FileNotFoundException;
 
